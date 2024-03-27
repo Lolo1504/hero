@@ -21,6 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{Route('admin.heroes')}}">Heroes</a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{{Route('admin.enemigos')}}">Enemigos</a>
                 </li>
@@ -32,7 +33,7 @@
         </div>
   </div>
 </nav>
-<div class="container">
+<div class="container " style="margin-top: 20px ">
     @yield('content')
 </div>
 
