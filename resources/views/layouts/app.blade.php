@@ -19,14 +19,14 @@
                     <a class="nav-link " aria-current="page" href="{{Route('admin')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{Route('admin.heroes')}}">Heroes</a>
+                    <a class="nav-link" href="{{Route('heroes.index')}}">Heroes</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{Route('admin.enemigos')}}">Enemigos</a>
+                    <a class="nav-link" href="{{Route('enemigo.index')}}">Enemigos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{Route('admin.items')}}">Items</a>
+                    <a class="nav-link" href="{{Route('item.index')}}">Items</a>
                 </li>
 
             </ul>

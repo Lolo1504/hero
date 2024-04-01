@@ -20,7 +20,7 @@ class HeroeController extends Controller
     public function Store(Request $request)
         {
             $this-> saveHero( $request,null);
-            return redirect()-> route('admin.heroes');
+            return redirect()-> route('heroes.index');
         }
 
     public function edit($id)
@@ -34,7 +34,7 @@ class HeroeController extends Controller
         {
             
             $this-> saveHero( $request,$id );
-            return redirect()-> route('admin.heroes');
+            return redirect()-> route('heroes.index');
         }
 
     public function saveHero(Request $request,$id)
@@ -65,6 +65,6 @@ class HeroeController extends Controller
         {
             $hero = Hero::find($id);
             $hero -> delete();
-            return redirect() -> route('admin.heroes');
+            return redirect() -> route('heroes.index');
         }
 }
