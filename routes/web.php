@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EnemigoController;
 use App\Http\Controllers\HeroeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\BSController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,7 @@ Route :: resource('heroes',HeroeController::class );
 
 Route::resource('enemigo', EnemigoController::class);
 Route::resource('item', ItemController::class);
+Route::get('bs',[BSController::class,'index']) -> name("admin.bs");
 
 });
 

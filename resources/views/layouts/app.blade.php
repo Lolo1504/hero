@@ -28,7 +28,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{Route('item.index')}}">Items</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{Route('admin.bs')}}">Sistema de batallas</a>
+                </li>
             </ul>
         </div>
   </div>
