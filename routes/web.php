@@ -27,6 +27,20 @@ Route::get('bs',[BSController::class,'index']) -> name("admin.bs");
 Route::group(['prefix' => 'api'],function(){
     Route::get('/',[APIController::class,'index'])-> name("api");
 
+    #Hero
+    Route::get('heroes',[APIController::class,'heroes']);
+    Route::get('heroes/{id}',[APIController::class,'hero']);
+
+    #Enemigo
+    Route::get('enemigos',[APIController::class,'enemigos']);
+    Route::get('enemigos/{id}',[APIController::class,'enemigo']);
+
+    #Item
+    Route::get('items',[APIController::class,'items']);
+    Route::get('items/{id}',[APIController::class,'item']);
+
+    #BS
+    Route::get('bs/{HId}/{EId}',[APIController::class,'ManualBS']);
 });
 
 

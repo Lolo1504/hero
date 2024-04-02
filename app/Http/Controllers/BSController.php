@@ -13,7 +13,7 @@ class BSController extends Controller
         ); 
     }
 
-    public function runAutoB($heroId,$enemyId){
+    public static function runAutoB($heroId,$enemyId){
         $hero = Hero::find($heroId);
         $enemy = Enemy::find($enemyId);
         $heroV = $hero->hp;
