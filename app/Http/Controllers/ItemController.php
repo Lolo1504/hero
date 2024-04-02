@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\File;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
@@ -87,6 +88,16 @@ class ItemController extends Controller
         $Item->def =$request -> input('def');
         $Item->luck =$request -> input('luck');
         $Item->cost =$request -> input('cost');
+
+         
+        if($request->hasFile('img_path'))
+        {
+            $file = $request->file('img_path');
+            $name = time(). "_" . $file->getClientOriginalName();
+            $file -> move(public_path(). '/images/items/', $name);
+
+            $Item->img_path = $name;
+        }
         
         $Item->save();
     }

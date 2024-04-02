@@ -25,5 +25,8 @@
     <label for="Rcoins" class="form-label">Recompensa de monedas </label>
     <input type="number" class="form-control" id="Rcoins" name="Rcoins" @isset($Enemy) value = "{{$Enemy ->Rcoins }}" @endisset placeholder="Escribe la cantidad de monedas del heroe">
   </div>
-
+  <div class="mb-3">
+    <label for="img_path">imagenes</label>
+    <input type="file" name="img_path" id="img_path">
+  </div>
   <input type="hidden" name="_token" value="{{ csrf_token() }}" />

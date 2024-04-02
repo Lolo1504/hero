@@ -6,6 +6,8 @@ use App\Http\Controllers\HeroeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\BSController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\APIController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +20,12 @@ Route :: resource('heroes',HeroeController::class );
 
 Route::resource('enemigo', EnemigoController::class);
 Route::resource('item', ItemController::class);
+Route::resource('bs',BSController::class );
 Route::get('bs',[BSController::class,'index']) -> name("admin.bs");
+
+});
+Route::group(['prefix' => 'api'],function(){
+    Route::get('/',[APIController::class,'index'])-> name("api");
 
 });
 

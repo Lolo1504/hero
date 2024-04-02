@@ -3,7 +3,7 @@
 <h1>
     Crear Nuevo item
 </h1>
-<form action="{{route('item.store')}}" method="POST">
+<form action="{{route('item.store')}}" method="POST" enctype="multipart/form-data">
   
   @include('admin.items.form')
   

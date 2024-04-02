@@ -25,7 +25,10 @@
         <label for="coins" class="form-label">Monedas </label>
         <input type="number" class="form-control" id="coins" name="coins" @isset($hero) value = "{{$hero ->coins }}" @endisset placeholder="Escribe la cantidad de monedas del heroe">
       </div>
-  
+      <div class="mb-3">
+        <label for="img_path">imagenes</label>
+        <input type="file" name="img_path" id="img_path">
+      </div>
         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
     
 

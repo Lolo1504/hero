@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\Enemy;
 class EnemigoController extends Controller
@@ -54,11 +54,23 @@ class EnemigoController extends Controller
             $Enemy->def =$request -> input('def');
             $Enemy->Rcoins =$request -> input('Rcoins');
             $Enemy->Rxp = $request -> input('Rxp') ;
+
+            if($request->hasFile('img_path'))
+            {
+                $file = $request->file('img_path');
+                $name = time(). "_" . $file->getClientOriginalName();
+                $file -> move(public_path(). '/images/enemigos/', $name);
+
+                $Enemy->img_path = $name;
+            }
             $Enemy->save();
         }
     public function destroy($id)
         {
             $Enemy = Enemy::find($id);
+            $filePath = public_path() . '/images/enemigos/' . $Enemy->img_path;
+            File::delete($filePath);
+            
             $Enemy -> delete();
             return redirect() -> route('enemigo.index');
         }

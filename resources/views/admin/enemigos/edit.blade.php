@@ -3,7 +3,7 @@
 <h1>
     Editar  Enemigo - {{ $Enemy ->name}}
 </h1>
-<form action="{{route('enemigo.update',$Enemy ->id)}}" method="post">
+<form action="{{route('enemigo.update',$Enemy ->id)}}" method="post"  enctype="multipart/form-data">
     @method('PUT')
     @include('admin.enemigos.form')
     

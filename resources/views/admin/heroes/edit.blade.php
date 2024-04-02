@@ -3,7 +3,7 @@
 <h1>
     Editar  Heroe - {{ $hero->name}}
 </h1>
-<form action="{{route('heroes.update',$hero ->id)}}" method="post">
+<form action="{{route('heroes.update',$hero ->id)}}" method="post"  enctype="multipart/form-data">
    
     @method('PUT')
 

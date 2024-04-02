@@ -3,7 +3,7 @@
 <h1>
     Editar  Item - {{$item ->name}}
 </h1>
-<form action="{{route('item.update',$item ->id)}}" method="post">
+<form action="{{route('item.update',$item ->id)}}" method="post" enctype="multipart/form-data">
   
     @method('PUT')
     @include('admin.items.form')
